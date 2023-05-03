@@ -1,4 +1,6 @@
-package com.stellar.coreBasic.member;
+package com.stellar.coreBasic.repository;
+
+import com.stellar.coreBasic.entity.Member;
 
 public interface MemberRepository {
 

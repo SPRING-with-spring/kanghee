@@ -1,4 +1,4 @@
-package com.stellar.coreBasic.member;
+package com.stellar.coreBasic.entity;
 
 public class Member {
     private String name;

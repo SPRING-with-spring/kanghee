@@ -1,4 +1,6 @@
-package com.stellar.coreBasic.member;
+package com.stellar.coreBasic.service;
+
+import com.stellar.coreBasic.entity.Member;
 
 public interface MemberService {
     void join(Member member);
