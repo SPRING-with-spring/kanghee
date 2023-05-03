@@ -1,13 +1,20 @@
 package com.stellar.coreBasic.service;
 
+import com.stellar.coreBasic.AppConfig;
 import com.stellar.coreBasic.entity.HighSchoolGrade;
 import com.stellar.coreBasic.entity.Member;
-import com.stellar.coreBasic.serviceImpl.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforeEach(){
+        AppConfig appconfig = new AppConfig();
+        memberService = appconfig.memberService();
+    }
 
     @Test
     void join() {

@@ -1,15 +1,22 @@
 package com.stellar.coreBasic.service;
 
+import com.stellar.coreBasic.AppConfig;
 import com.stellar.coreBasic.entity.HighSchoolGrade;
 import com.stellar.coreBasic.entity.Inquiry;
 import com.stellar.coreBasic.entity.Member;
-import com.stellar.coreBasic.serviceImpl.InquiryServiceImpl;
-import com.stellar.coreBasic.serviceImpl.MemberServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class InquiryServiceTest {
-    MemberService memberService = new MemberServiceImpl();
-    InquiryService inquiryService = new InquiryServiceImpl();
+    MemberService memberService;
+    InquiryService inquiryService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appconfig = new AppConfig();
+        memberService = appconfig.memberService();
+        inquiryService = appconfig.inquiryService();
+    }
 
     @Test
     void createInquiry() {
