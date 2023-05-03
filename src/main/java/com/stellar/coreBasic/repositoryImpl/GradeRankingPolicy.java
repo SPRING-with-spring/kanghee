@@ -2,11 +2,15 @@ package com.stellar.coreBasic.repositoryImpl;
 
 import com.stellar.coreBasic.entity.Member;
 import com.stellar.coreBasic.repository.RankingPolicy;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+@Component
+@Primary
 public class GradeRankingPolicy implements RankingPolicy {
     @Override
     public int ranking(Member member, List<Member> memberList) {

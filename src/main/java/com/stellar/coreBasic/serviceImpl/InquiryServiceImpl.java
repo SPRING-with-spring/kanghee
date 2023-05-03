@@ -5,15 +5,14 @@ import com.stellar.coreBasic.entity.Member;
 import com.stellar.coreBasic.repository.MemberRepository;
 import com.stellar.coreBasic.repository.RankingPolicy;
 import com.stellar.coreBasic.service.InquiryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
+@RequiredArgsConstructor()
 public class InquiryServiceImpl implements InquiryService {
     private final MemberRepository memberRepository;
     private final RankingPolicy rankingPolicy;
-
-    public InquiryServiceImpl(MemberRepository memberRepository, RankingPolicy rankingPolicy) {
-        this.memberRepository = memberRepository;
-        this.rankingPolicy = rankingPolicy;
-    }
 
     @Override
     public Inquiry createInquiry(String memberName, int rankingPolicyIndex) {

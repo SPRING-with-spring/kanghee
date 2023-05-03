@@ -6,14 +6,16 @@ import com.stellar.coreBasic.entity.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MemberServiceTest {
     MemberService memberService;
 
     @BeforeEach
     public void beforeEach(){
-        AppConfig appconfig = new AppConfig();
-        memberService = appconfig.memberService();
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        memberService = ac.getBean(MemberService.class);
     }
 
     @Test

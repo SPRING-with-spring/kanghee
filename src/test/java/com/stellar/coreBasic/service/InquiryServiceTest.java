@@ -6,6 +6,8 @@ import com.stellar.coreBasic.entity.Inquiry;
 import com.stellar.coreBasic.entity.Member;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 class InquiryServiceTest {
     MemberService memberService;
@@ -13,9 +15,9 @@ class InquiryServiceTest {
 
     @BeforeEach
     public void beforeEach() {
-        AppConfig appconfig = new AppConfig();
-        memberService = appconfig.memberService();
-        inquiryService = appconfig.inquiryService();
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        memberService = ac.getBean(MemberService.class);
+        inquiryService = ac.getBean(InquiryService.class);
     }
 
     @Test
