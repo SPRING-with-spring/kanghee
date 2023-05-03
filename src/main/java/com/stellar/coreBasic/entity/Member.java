@@ -2,15 +2,17 @@ package com.stellar.coreBasic.entity;
 
 public class Member {
     private String name;
-    private Long score;
+    private Double score;
     private Integer grade;
-    private Long rate;
+    private Double rate;
+    private HighSchoolGrade highSchoolGrade;
 
-    public Member(String name, Long score, Integer grade, Long rate) {
+    public Member(String name, Double score, Integer grade, Double rate, HighSchoolGrade highSchoolGrade) {
         this.name = name;
         this.score = score;
         this.grade = grade;
         this.rate = rate;
+        this.highSchoolGrade = highSchoolGrade;
     }
 
     public String getName() {
@@ -21,11 +23,11 @@ public class Member {
         this.name = name;
     }
 
-    public Long getScore() {
+    public Double getScore() {
         return score;
     }
 
-    public void setScore(Long score) {
+    public void setScore(Double score) {
         this.score = score;
     }
 
@@ -37,11 +39,19 @@ public class Member {
         this.grade = grade;
     }
 
-    public Long getRate() {
+    public Double getRate() {
         return rate;
     }
 
-    public void setRate(Long rate) {
+    public void setRate(Double rate) {
         this.rate = rate;
+    }
+
+    public HighSchoolGrade getHighSchoolGrade() {
+        return highSchoolGrade;
+    }
+
+    public void setHighSchoolGrade(HighSchoolGrade highSchoolGrade) {
+        this.highSchoolGrade = highSchoolGrade;
     }
 }
