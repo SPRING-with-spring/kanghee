@@ -17,8 +17,8 @@ public class RateRankingPolicy implements RankingPolicy {
     class RateComparator implements Comparator<Member> {
         @Override
         public int compare(Member mem1, Member mem2) {
-            if (mem1.getRate() > mem2.getRate()) return -1;
-            else if (mem1.getRate() < mem2.getRate()) return 1;
+            if (mem1.getRate() > mem2.getRate()) return 1;
+            else if (mem1.getRate() < mem2.getRate()) return -1;
             return 0;
         }
     }

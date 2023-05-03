@@ -17,8 +17,8 @@ public class GradeRankingPolicy implements RankingPolicy {
     class GradeComparator implements Comparator<Member> {
         @Override
         public int compare(Member mem1, Member mem2) {
-            if (mem1.getGrade() > mem2.getGrade()) return -1;
-            else if (mem1.getGrade() < mem2.getGrade()) return 1;
+            if (mem1.getGrade() > mem2.getGrade()) return 1;
+            else if (mem1.getGrade() < mem2.getGrade()) return -1;
             return 0;
         }
     }
